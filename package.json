@@ -1,0 +1,56 @@
+{
+  "name": "dsh-superagent-bridge",
+  "version": "0.1.1",
+  "description": "DeepSeek Harness (DSH) plugin for the dsh-superagent service side: serves the Superagent management panel as a standalone page over plain HTTP, so DSH NEXT can embed it through a same-origin proxy iframe.",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "superagent",
+    "bridge",
+    "panel",
+    "iframe"
+  ],
+  "license": "MIT",
+  "author": "deepseekv41flash",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepseekv41flash/dsh-superagent-bridge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/deepseekv41flash/dsh-superagent-bridge/issues"
+  },
+  "homepage": "https://github.com/deepseekv41flash/dsh-superagent-bridge#readme",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "dist",
+    "cordis.patch.yml",
+    "README.md",
+    "README-en.md",
+    "CHANGELOG.md",
+    "THIRD-PARTY-NOTICES.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "check": "bash scripts/check.sh",
+    "prepublishOnly": "npm run check"
+  }
+}

@@ -1,0 +1,7 @@
+# dsh-superagent-bridge bundle layer: inserts the bridge plugin entry into the profile
+# that runs the dsh-superagent service (the profile whose DSH host listens on the panel port).
+# The plugin has no required config; the panel ESM is dist/standalone.js inside this package.
+- insert:
+    - id: dsh-superagent-bridge
+      name: dsh-superagent-bridge
+      # config: {}   # 无配置项；可用环境变量 DSH_SUPERAGENT_STANDALONE 指向自定义面板 ESM
